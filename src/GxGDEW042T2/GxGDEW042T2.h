@@ -81,12 +81,13 @@ class GxGDEW042T2 : public GxEPD
     void _Init_PartialUpdate();
     void _rotate(uint16_t& x, uint16_t& y, uint16_t& w, uint16_t& h);
     void _writeDataPGM(const uint8_t* data, uint16_t n, int16_t fill_with_zeroes = 0);
-  private:
+  public:
 #if defined(__AVR)
     uint8_t _buffer[GxGDEW042T2_PAGE_SIZE];
 #else
     uint8_t _buffer[GxGDEW042T2_BUFFER_SIZE];
 #endif
+  private:
     GxIO& IO;
     int16_t _current_page;
     bool _initial, _using_partial_mode;

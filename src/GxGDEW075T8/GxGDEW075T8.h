@@ -80,12 +80,13 @@ class GxGDEW075T8 : public GxEPD
     void _waitWhileBusy(const char* comment = 0);
     void _send8pixel(uint8_t data);
     void _rotate(uint16_t& x, uint16_t& y, uint16_t& w, uint16_t& h);
-  private:
+  public:
 #if defined(__AVR)
     uint8_t _buffer[GxGDEW075T8_PAGE_SIZE];
 #else
     uint8_t _buffer[GxGDEW075T8_BUFFER_SIZE];
 #endif
+  private:
     GxIO& IO;
     int16_t _current_page;
     bool _using_partial_mode;
