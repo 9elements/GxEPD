@@ -93,8 +93,9 @@ class GxGDEW075T7 : public GxEPD
     void _Init_PartialUpdate();
     void _waitWhileBusy(const char* comment = 0);
     void _rotate(uint16_t& x, uint16_t& y, uint16_t& w, uint16_t& h);
-  private:
+  public:
     uint8_t _buffer[GxGDEW075T7_BUFFER_SIZE];
+  private:
     GxIO& IO;
     int16_t _current_page;
     bool _using_partial_mode;
